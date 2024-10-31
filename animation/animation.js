@@ -137,12 +137,9 @@ function drawVis(year) {
   yAxis.transition().duration(duration).call(d3.axisLeft(yScale));
 }
 
-async function runApp() {
-  await prepareVis();
-
-  // get unique years, sort by year, and then go through them once every two seconds.
-  const years = Array.from(new Set(dataset.map((d) => d.year))).sort();
+function playAnimation() {
   let i = 0;
+  const years = Array.from(new Set(dataset.map((d) => d.year))).sort();
   const interval = setInterval(() => {
     let year = years[i];
     console.log(year);
@@ -152,6 +149,15 @@ async function runApp() {
       clearInterval(interval);
     }
   }, duration);
+}
+
+async function runApp() {
+  await prepareVis();
+  const years = Array.from(new Set(dataset.map((d) => d.year))).sort();
+
+  drawVis(years[0]);
+  // get unique years, sort by year, and then go through them once every two seconds.
+  document.querySelector("#play").addEventListener("click", playAnimation);
 }
 
 runApp();
