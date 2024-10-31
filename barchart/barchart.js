@@ -2,7 +2,7 @@ import * as d3 from "https://cdn.jsdelivr.net/npm/d3@7/+esm";
 import _ from "https://cdn.jsdelivr.net/npm/lodash@4.17.21/+esm";
 
 async function drawVis() {
-  const dataset = await d3.csv("./datasets/videogames_wide.csv", d3.autoType);
+  const dataset = await d3.csv("../datasets/videogames_wide.csv", d3.autoType);
   console.log(dataset);
   // Global_Sales, JP_Sales
 
