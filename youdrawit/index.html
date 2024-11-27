@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Interactive Line Chart</title>
+  <style>
+    /* CSS styles */
+    body {
+      font-family: Arial, sans-serif;
+    }
+
+    #chart-container {
+      width: 1000px;
+      margin: 0 auto;
+    }
+
+    #line-chart {
+      border: 1px solid #ccc;
+    }
+
+    .instruction {
+      text-align: center;
+      font-size: 16px;
+      color: #7f0000;
+      margin-top: 20px;
+    }
+
+    button {
+      display: block;
+      margin: 20px auto;
+      padding: 10px 20px;
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+
+    button:disabled {
+      background-color: #cccccc;
+      cursor: not-allowed;
+    }
+
+    .grid line {
+      stroke: lightgrey;
+      stroke-opacity: 0.7;
+      shape-rendering: crispEdges;
+    }
+
+    .grid path {
+      stroke-width: 0;
+    }
+
+    .line {
+      fill: none;
+      stroke: steelblue;
+      stroke-width: 2;
+    }
+
+    .user-line {
+      fill: none;
+      stroke: red;
+      stroke-width: 2;
+    }
+
+    .area {
+      fill: lightsteelblue;
+      opacity: 0.5;
+    }
+
+  </style>
+</head>
+<body>
+
+  <div id="chart-container">
+    <div class="instruction">Draw the line for the missing years on this chart.</div>
+    <div id="line-chart"></div>
+    <button id="show-results" disabled>Show me how I did.</button>
+  </div>
+
+  <!-- D3.js library -->
+  <script src="https://d3js.org/d3.v7.min.js"></script>
+
+  <!-- Our script -->
+  <script src="script.js"></script>
+
+</body>
+</html>
