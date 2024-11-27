@@ -15,18 +15,34 @@
     <main>
         <div class="container">
             <div id="controls">
-=
+                <div class="control-row">
+                    <label for="yearSlider">Year:</label>
+                    <input type="range" id="yearSlider" min="0" max="0" step="5" value="0">
+                    <span id="yearDisplay">Year</span>
+                </div>
+                <div class="control-row">
+                    <label for="scaleSelect">X-Axis Scale:</label>
+                    <select id="scaleSelect">
+                        <option value="linear">Linear</option>
+                        <option value="log" selected>Logarithmic</option>
+                    </select>
+                </div>
+                <div class="control-row buttons">
+                    <button id="play">Play</button>
+                    <button id="pause">Pause</button>
+                    <button id="reset">Reset</button>
+                </div>
             </div>
             <div id="visualizations">
                 <div id="barchartContainer"></div>
                 <div id="scatterplotContainer"></div>
             </div>
-
         </div>
     </main>
-
+    <footer>
+        <p>Data Source: <a href="https://www.gapminder.org/data/" target="_blank">Gapminder</a></p>
+    </footer>
     <script type="module" src="vis.js"></script>
-
 </body>
 
 </html>

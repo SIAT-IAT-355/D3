@@ -7,7 +7,7 @@
 
 /* Body Styling */
 body {
-    font-family: 'Arial', sans-serif;
+    font-family: 'Helvetica Neue', 'Arial', sans-serif;
     background-color: #f4f4f4;
     color: #333;
     display: flex;
@@ -25,10 +25,12 @@ header {
 
 header h1 {
     margin-bottom: 0.5em;
+    font-size: 2em;
+    font-weight: 700;
 }
 
 header p {
-    font-size: 1em;
+    font-size: 1.1em;
 }
 
 /* Main Content */
@@ -92,6 +94,7 @@ main {
     background-color: #35424a;
     color: #fff;
     cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
 .buttons button:disabled {
@@ -104,13 +107,22 @@ main {
 }
 
 /* Visualization Styling */
-#visContainer {
+#visualizations {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2em;
+}
+
+#barchartContainer,
+#scatterplotContainer {
     background-color: #fff;
     border-radius: 5px;
     padding: 1em;
+    flex: 1 1 500px;
 }
 
-#visContainer svg {
+#barchartContainer svg,
+#scatterplotContainer svg {
     width: 100%;
     height: auto;
 }
@@ -127,24 +139,27 @@ main {
     z-index: 10;
 }
 
-/* SVG Text */
-svg text {
-    font-family: 'Arial', sans-serif;
-}
-
+/* Adjustments for Labels */
 .xLabel,
 .yLabel {
-    font-size: 1em;
-    font-weight: bold;
-    fill: #333;
+  font-size: 1em; 
+  font-weight: bold;
+  fill: #333;
 }
 
 .yearLabel {
-    font-size: 3em;
-    font-weight: bold;
-    fill: #ccc;
-    opacity: 0.7;
+  font-size: 2em;
+  font-weight: bold;
+  fill: #ccc;
+  opacity: 0.7;
 }
+
+.chart-title {
+  font-size: 1.5em;
+  font-weight: bold;
+  fill: #333;
+}
+
 
 /* Legend Styling */
 .legend text {
@@ -155,6 +170,15 @@ svg text {
 .legend rect {
     stroke: #333;
     stroke-width: 1px;
+    cursor: pointer;
+}
+
+.legend rect.hidden {
+    fill: #ccc;
+}
+
+.legend text.hidden {
+    fill: #ccc;
 }
 
 /* Footer */
@@ -175,7 +199,7 @@ footer a {
 
     .xLabel,
     .yLabel {
-        font-size: 0.9em;
+        font-size: 1em;
     }
 
     .yearLabel {
@@ -213,7 +237,7 @@ footer a {
 
     .xLabel,
     .yLabel {
-        font-size: 0.8em;
+        font-size: 0.9em;
     }
 
     .yearLabel {
@@ -233,7 +257,7 @@ footer a {
 
     .xLabel,
     .yLabel {
-        font-size: 0.7em;
+        font-size: 0.8em;
     }
 
     .yearLabel {
@@ -249,7 +273,7 @@ footer a {
     }
 
     #visualizations {
-        display: flex;
-        width: 100%;
+        flex-direction: column;
+        gap: 1em;
     }
 }
