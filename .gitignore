@@ -36,3 +36,6 @@ coverage/
 # Ignore dependency directories
 jspm_packages/
 bower_components/
+
+# Ignore Desktop.ini files
+Desktop.ini
